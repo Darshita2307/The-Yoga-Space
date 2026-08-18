@@ -1,0 +1,22 @@
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} {%block title%} Django App {%endblock%} {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+{% block content %}
+        <nav class="navbar">
+        <div class="logo"> The Yoga Space</div>
+        <div class="nav-links">
+            <a href="/" aria-label="Home" title ="Home">🏠 </a>
+            <a href="/about" aria-label="About" title="About">😁</a>
+            <a href="/blogs" aria-label="Blog" title="Blog">📰</a>
+            <a href="blogs/new-blog" aria-label="New Blog" title="New Blog">🆕</a>
+            <a href="/Users/register" aria-label="Register" title="Register">👤</a>
+
+        </div>
+    </nav>
+{% endblock  %}
+</html>

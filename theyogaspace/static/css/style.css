@@ -1,0 +1,42 @@
+body {
+    background-color:rgb(230, 140, 61);
+}
+
+.navbar {
+    background-color: lightgreen;
+    text-align: center;
+    padding: 30px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 40px;
+    margin: 10px;
+}
+
+.logo {
+    margin:10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
+
+form {
+    width: 400px;
+    margin: 30px auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: lightgreen;
+    border: none;
+    display: block;
+    margin: auto;
+}

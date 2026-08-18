@@ -1,0 +1,19 @@
+
+
+
+
+
+{% extends "layout.html" %}
+
+{% block title %}
+New Blog Create{% endblock %}
+
+{% block content %}
+     <h1 > New Blog </h1>
+     <form action="{% url 'new-blog' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{form}}
+          <button>Add Blog</button>
+     </form>
+
+{% endblock %}
