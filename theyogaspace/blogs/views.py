@@ -18,4 +18,4 @@ def create_blog(request):
             return redirect('blogs:list')
     else:
         form=BlogForm()
-    return render(request,'blog_new.html',{'form':form})              
+    return render(request,'blog_new.html',{"form":form})              

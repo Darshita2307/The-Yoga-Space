@@ -1,42 +1,186 @@
-body {
-    background-color:rgb(230, 140, 61);
+* {
+    box-sizing: border-box;
 }
+
+body {
+    margin: 0;
+    background-color: white;
+}
+
+
+/* NAVBAR */
 
 .navbar {
     background-color: lightgreen;
-    text-align: center;
-    padding: 30px;
+
+    width: 50%;
+    height: 100px;
+
+    margin: 75px auto 0 auto;
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 25px;
 }
 
-.nav-links a {
-    color: black;
-    text-decoration: none;
-    font-size: 40px;
-    margin: 10px;
-}
+
+/* LOGO */
 
 .logo {
-    margin:10px;
-    font-size: 20px;
-    font-weight: bold;
     color: red;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    font-family: Georgia, serif;
+
+    white-space: nowrap;
+
+    padding-right: 35px;
+
+    border-right: 3px solid rgba(100, 100, 100, 0.25);
 }
 
-form {
+
+/* ICONS CONTAINER */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-left: 30px;
+}
+
+
+/* ALL LINKS */
+
+.nav-links a {
+    text-decoration: none;
+
+    font-size: 40px;
+
+    line-height: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* LOGOUT FORM */
+
+.logout {
+    width: auto;
+
+    margin: 0;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* LOGOUT BUTTON */
+
+.logout-button {
+    font-size: 40px;
+
+    background: transparent;
+
+    border: none;
+
+    padding: 0;
+
+    margin: 0;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* HOVER */
+
+.nav-links a:hover,
+.logout-button:hover {
+    opacity: 0.75;
+}
+
+
+/* NORMAL FORMS */
+
+form:not(.logout) {
     width: 400px;
+
     margin: 30px auto;
 }
 
-input, textarea {
+
+input,
+textarea {
     width: 100%;
+
     padding: 8px;
+
     margin: 5px 0 15px;
 }
 
-button {
+
+button:not(.logout-button) {
     padding: 8px 15px;
+
     background-color: lightgreen;
+
     border: none;
+
     display: block;
+
     margin: auto;
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.blog-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.blog-content h2 {
+    margin: 10px 0;
+}
+
+.blog-content p {
+    color: #555;
+}
+
+.blog-content h3 {
+    font-size: 14px;
+    color: #777;
 }

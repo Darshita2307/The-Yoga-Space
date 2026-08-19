@@ -1,22 +1,73 @@
-{% load static%}
+{% load static %}
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% comment %} {%block title%} Django App {%endblock%} {% endcomment %}
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-{% block content %}
-        <nav class="navbar">
-        <div class="logo"> The Yoga Space</div>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            The Yoga Space
+        </div>
+
         <div class="nav-links">
-            <a href="/" aria-label="Home" title ="Home">🏠 </a>
+
+            <a href="/" aria-label="Home" title="Home">🏠</a>
+
             <a href="/about" aria-label="About" title="About">😁</a>
+
             <a href="/blogs" aria-label="Blog" title="Blog">📰</a>
-            <a href="blogs/new-blog" aria-label="New Blog" title="New Blog">🆕</a>
-            <a href="/Users/register" aria-label="Register" title="Register">👤</a>
+
+            {% if user.is_authenticated %}
+
+                <a href="/blogs/new-blog"
+                   aria-label="New Blog"
+                   title="New Blog">🆕</a>
+
+                <form class="logout"
+                      action="{% url 'Users:logout' %}"
+                      method="post">
+
+                    {% csrf_token %}
+
+                    <button type="submit"
+                            class="logout-button"
+                            aria-label="Logout"
+                            title="Logout">🚪</button>
+
+                </form>
+
+            {% else %}
+
+                <a href="/Users/register"
+                   aria-label="Register"
+                   title="Register">👤</a>
+
+                <a href="/Users/login"
+                   aria-label="Login"
+                   title="Login">🔒</a>
+
+            {% endif %}
 
         </div>
+
     </nav>
-{% endblock  %}
+
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+</body>
+
 </html>

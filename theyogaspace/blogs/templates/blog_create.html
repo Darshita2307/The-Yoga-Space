@@ -1,24 +1,39 @@
-
-
-
-
-
 {% extends "layout.html" %}
 
 {% block title %}
-Blog Create{% endblock %}
+Blog Create
+{% endblock %}
 
 {% block content %}
-     <h1 > Blog Creation</h1></body>
-    <section>
-        {% for blogs in blogs  %}
-        <div>
-         <h2> {{blogs.title}}</h2>
-         <p> {{blogs.body}}</p>
-        <img src="{{blogs.banner.url}}" alt="" width="300px"> 
-       <h3>   {{blogs.created_on}}</h3>
-    <h3>      {{blogs.author}}</h3>
+
+<h1>Blog Creation</h1>
+
+<section class="blog-container">
+
+    {% for blog in blogs %}
+
+    <div class="blog-card">
+
+        {% if blog.banner %}
+            <img src="{{ blog.banner.url }}" alt="{{ blog.title }}">
+        {% endif %}
+
+        <div class="blog-content">
+
+            <h2>{{ blog.title }}</h2>
+
+            <p>{{ blog.body }}</p>
+
+            <h3>{{ blog.created_on }}</h3>
+
+            <h3>By {{ blog.author }}</h3>
+
+        </div>
+
     </div>
-        {% endfor %}
-    </section>
+
+    {% endfor %}
+
+</section>
+
 {% endblock %}
